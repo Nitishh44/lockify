@@ -1,0 +1,26 @@
+<%- include('include/_header') %>
+
+<section id="add_entry">
+    <form action="/api/passwords" method="POST">
+
+        <h2>Add New Password</h2>
+
+        <input type="text" name="purpose" placeholder="Website / App name" required>
+
+        <input type="email" name="email" placeholder="Email (optional)">
+
+        <input type="text" name="username" placeholder="Username">
+
+        <input type="text" name="password" placeholder="Password" required>
+
+        <select name="status">
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+        </select>
+
+        <button type="submit">Save Password</button>
+
+    </form>
+</section>
+
+<%- include('include/_footer') %>

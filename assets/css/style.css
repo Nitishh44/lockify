@@ -1,0 +1,441 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=PT+Sans&display=swap'); /* Google fonts import kiye gaye hain text styling ke liye */
+
+
+:root{
+    --dark: #2b2d42;
+    --light: #abd5bd;
+    --border: #dee2e6;
+    --border-btn: #edf2f4;
+    /* Global color variables define kiye gaye hain whole UI*/
+
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* Default browser styling reset ki gayi hai */
+
+}
+
+a{
+    text-decoration: none;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.container{
+    max-width: 1024px;
+    margin: auto;
+}
+
+.nav-brand{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.d-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.border-shadow{
+    border: 1px solid var(--border-btn);
+    box-shadow: 1px 3px 10px #e9ecef;
+}
+
+.text-dark{
+    color: var(--dark);
+}
+
+.inline{
+    display: inline-block;
+}
+
+.text-light{
+    color: var(--light);
+}
+
+.text-gradient{
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#header nav{
+    background-color: #06d6a0;
+    padding: 1em 0;
+    width: 100%;
+    /* Header navigation styling */
+
+}
+
+#site-main{
+    margin-top: 6em;
+    font-family: 'Barlow', sans-serif;
+    /* Main content section styling */
+
+}
+
+#site-main .container .box-nav > a{
+    font-size: 1em;
+    padding: .5em 1em;
+}
+
+#site-main .container form{
+    margin: 2em 0;
+}
+
+table{
+    border-spacing: 0px;
+    width: 100%;
+}
+
+.table td, table th{
+    padding: .75em;
+    vertical-align: top;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+table td > a.btn{
+    padding: .3em 1em;
+    font-size: 1.1em;
+    margin: 0 .2em;
+}
+
+.table tr:hover{
+    background-color: #06d6a0;
+    /* Table design aur hover effects */
+
+}
+
+.table tr:hover td > a{
+    box-shadow: none;
+}
+
+.table .thead-dark th{
+    color: #fff;
+    background-color: var(--dark);
+    border-color: #32383e;
+}
+
+@media only screen and (max-width: 1024px){
+    table, thead, tbody, th, td, tr{
+        display: block;
+        /* Responsive design ke liye media query */
+
+    }
+
+    thead tr{
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr{
+        border: 1px  solid var(--border);
+    }
+
+    td{
+        border: none;
+        position: relative;
+    }
+}
+
+/* add entry and update entry template */
+
+.form-title{
+    margin-top: 2em;
+}
+
+.form-title > h2{
+    padding: .5em 0;
+}
+
+.new_entry{
+    max-width: 786px;
+    margin: auto;
+}
+
+#update_entry .form-group,
+#add_entry .form-group{
+    margin: .4em 0;
+}
+
+#update_entry .form-group input[type="text"],
+#add_entry .form-group input[type="text"]{
+    width: 100%;
+    padding: .6em 1em;
+    margin: .5em 0;
+    border: 1px solid var(--border);
+    font-family: 'Barlow', sans-serif;
+    font-size: 1em;
+    border-radius: .2em;
+}
+
+#update_entry .form-group .radio,
+#add_entry .form-group .radio{
+    margin: 1em 2em;
+}
+
+/* adding style to radio button */
+.radio input[type="radio"]{
+    position: absolute;
+    opacity: 0;
+}
+
+.radio input[type="radio"] + .radio-label:before{
+    content: "";
+    background: var(--border-btn);
+    border-radius: 100%;
+    border: 1px solid var(--border);
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    top: -0em;
+    margin-right: .5em;
+    vertical-align: top;
+    cursor: pointer;
+    text-align: center;
+    -webkit-transition: all 250ms ease;
+    transition: all 250ms ease;
+}
+
+
+.radio input[type="radio"]:checked + .radio-label:before{
+    background-color: #16db93;
+    box-shadow: inset 0 0 0 4px #e9ecef;
+}
+
+.radio input[type="radio"]:focus + .radio-label:before{
+    outline: none;
+    border-color: #16db93;
+}
+
+.radio input[type="radio"]:disabled + .radio-label:before{
+    box-shadow: inset 0 0 0 4px #e9ecef;
+    border-color: #b4b4b4;
+    background: #b4b4b4;
+}
+
+#update_entry .form-group .btn,
+#add_entry .form-group .btn{
+    width: 100%;
+    padding: .9em 1em;
+    background-color: #16db93;
+    border: none;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: .2em;
+    margin: .5em 0;
+}
+
+#update_entry .form-group .btn:hover,
+#add_entry .form-group .btn:hover{
+    background-color: var(--dark);
+    color: var(--border);
+}
+.action-btn {
+    cursor: pointer;
+    margin-right: 10px;
+}
+/* ================= AUTH MODERN UI ================= */
+
+.auth-wrapper{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f6f9;
+}
+
+.auth-container{
+    width: 850px;
+    height: 520px;
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    background: white;
+}
+
+.auth-form{
+    width: 50%;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-form h2{
+    margin-bottom: 25px;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.auth-form input{
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    font-size: 1em;
+}
+
+.auth-form button{
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    background: linear-gradient(to right, #06d6a0, #16db93);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-form button:hover{
+    transform: scale(1.05);
+}
+
+.auth-side{
+    width: 50%;
+    background: linear-gradient(135deg, #06d6a0, #1b9aaa);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+}
+
+.auth-side h2{
+    margin-bottom: 10px;
+}
+
+.auth-side p{
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.auth-side a{
+    padding: 10px 25px;
+    border-radius: 25px;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.auth-side a:hover{
+    background: white;
+    color: #06d6a0;
+}
+.auth-form form{
+    width: 100%;
+    max-width: 280px;;
+}
+.auth-form button{
+    margin-top: 10px;
+    width: 100%;;
+}
+/* ================= ADD ENTRY MODERN ================= */
+
+#add_entry{
+    display: flex;
+    justify-content: center;;
+}
+
+#add_entry form{
+    width: 450px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+#add_entry input,
+#add_entry select{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+#add_entry button{
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    background: linear-gradient(to right, #06d6a0, #16db93);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#add_entry button:hover{
+    transform: scale(1.03);
+}
+.entry-wrapper{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f6f9;
+}
+
+.entry-card{
+    width: 500px;
+    padding: 40px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+.entry-card input,
+.entry-card select{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.entry-card button{
+    width: 100%;
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    background: linear-gradient(to right, #06d6a0, #16db93);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.card-header{
+    text-align: center;
+    margin-bottom: 25px;
+}
+.card-header h2{
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    background: linear-gradient(to right, #06d6a0, #16db93);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.card-header p{
+    font-size: 14px;
+    color: #777;
+}

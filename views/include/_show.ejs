@@ -1,0 +1,21 @@
+<% for(var i = 0; i < entries.length; i++){ %>
+<tr>
+  <td><%= i + 1 %></td>
+  <td><%= entries[i].purpose %></td>
+  <td><%= entries[i].email %></td>
+  <td><%= entries[i].username %></td>
+
+  <!-- 🔐 MASKED PASSWORD -->
+  <td class="password-cell">******</td>
+
+  <td><%= entries[i].status %></td>
+
+  <td>
+    <a class="action-btn" href="/update-entry?id=<%= entries[i]._id %>">✏️</a>
+
+    <a class="action-btn delete" data-id="<%= entries[i]._id %>">❌</a>
+
+   <button class="action-btn" type="button" onclick="togglePassword('<%= entries[i]._id %>', this)">👁️</button>
+  </td>
+</tr>
+<% } %>
