@@ -17,7 +17,7 @@ const app = express(); // Express application initialize
 
 // Environment variables load kiye ja rahe hain
 
-const PORT = process.env.PORT || 8080 // Server ka port set kiya gaya hai
+const PORT = process.env.PORT || 3000; // Server ka port set kiya gaya hai
 
 
 
@@ -67,6 +67,10 @@ app.use('/img', express.static(path.resolve(__dirname, "assets/img")))
 app.use('/', require('./server/routes/router'))
 app.use('/', require('./server/routes/auth'));
 // Application routes load kiye ja rhe hai
+
+app.get("/", (req, res) => {
+  res.send("Lockify is running");
+});
 
 app.listen(PORT, () => {console.log(`Server is running http://localhost:${PORT}`)});
 // Server start kiya gaya
