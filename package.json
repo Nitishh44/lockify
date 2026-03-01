@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "lockify",
   "version": "1.0.0",
   "description": "Lockify - a secure password manager built with Node.js, Express, MongoDB and EJS",
@@ -33,10 +32,5 @@
     "morgan": "^1.10.0",
     "nodemailer": "^8.0.1",
     "nodemon": "^3.0.1"
-=======
-  "dependencies": {
-    "crypto-js": "^4.2.0",
-    "nodemailer": "^8.0.1"
->>>>>>> 110c28af5960e7eea2cfa1ec9c41b20f303ad451
   }
 }

@@ -1,21 +1,49 @@
 <% for(var i = 0; i < entries.length; i++){ %>
 <tr>
+
   <td><%= i + 1 %></td>
+
   <td><%= entries[i].purpose %></td>
-  <td><%= entries[i].email %></td>
+
+  <td><%= entries[i].email || "-" %></td>
+
   <td><%= entries[i].username %></td>
 
   <!-- 🔐 MASKED PASSWORD -->
   <td class="password-cell">******</td>
 
-  <td><%= entries[i].status %></td>
-
+  <!-- ✅ STATUS BADGE -->
   <td>
-    <a class="action-btn" href="/update-entry?id=<%= entries[i]._id %>">✏️</a>
-
-    <a class="action-btn delete" data-id="<%= entries[i]._id %>">❌</a>
-
-   <button class="action-btn" type="button" onclick="togglePassword('<%= entries[i]._id %>', this)">👁️</button>
+    <span class="status <%= entries[i].status === 'Active' ? 'active' : 'inactive' %>">
+      <%= entries[i].status %>
+    </span>
   </td>
+
+  <!-- ✅ ACTION BUTTONS -->
+  <td>
+    <div class="action-buttons">
+
+      <a href="/update-entry?id=<%= entries[i]._id %>" 
+         class="action-btn edit" 
+         title="Edit">
+         ✏️
+      </a>
+
+      <button type="button" 
+              class="action-btn view" 
+              title="View Password"
+              onclick="togglePassword('<%= entries[i]._id %>', this)">
+              👁️
+      </button>
+
+      <a class="action-btn delete" 
+         data-id="<%= entries[i]._id %>" 
+         title="Delete">
+         🗑️
+      </a>
+
+    </div>
+  </td>
+
 </tr>
 <% } %>

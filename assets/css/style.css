@@ -79,8 +79,9 @@ a{
 }
 
 #site-main{
-    margin-top: 6em;
+    margin-top: 0;
     font-family: 'Barlow', sans-serif;
+    padding-top: 1px;
     /* Main content section styling */
 
 }
@@ -249,7 +250,30 @@ table td > a.btn{
 .action-btn {
     cursor: pointer;
     margin-right: 10px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: none;
+    transition: 0.2s ease;
+    font-size: 14px;
 }
+.action-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.action-btn.edit{
+    background: #e3f2fd;
+}
+.action-btn.view{
+    background: #e8f5e9;
+}
+.action-btn.delete{
+    background: #ffebee;
+}
+.action-btn:hover{
+    background: scale(1.1);
+}
+
 /* ================= AUTH MODERN UI ================= */
 
 .auth-wrapper{
@@ -438,4 +462,114 @@ table td > a.btn{
 .card-header p{
     font-size: 14px;
     color: #777;
+}
+/* ===== MODERN DASHBOARD ===== */
+
+.dashboard-wrapper{
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.dashboard-card{
+    width: 95%;
+    max-width: 1200px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+}
+
+.dashboard-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.dashboard-top h2{
+    font-size: 24px;
+}
+
+.dashboard-actions{
+    display: flex;
+    gap: 15px;
+}
+
+#searchInput{
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.add-btn{
+    padding: 8px 16px;
+    background: linear-gradient(to right, #06d6a0, #16db93);
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.add-btn:hover{
+    opacity: 0.8;
+}
+
+/* Modern Table */
+
+.modern-table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.modern-table th{
+    text-align: center;
+    padding: 12px;
+    background: #f4f6f9;
+}
+
+.modern-table td{
+    text-align: center;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.modern-table tbody tr:hover{
+    background: #f9f9f9;
+}
+
+/* Status Badge */
+
+.status{
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status.active{
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status.inactive{
+    background: #ffebee;
+    color: #c62828;
+}
+.logout-btn {
+    padding: 8px 20px;
+    background: linear-gradient(to right, #06d6a0, #16db93);
+    color: white;
+    border-radius: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: 0.3s ease;
+}
+.logout-btn:hover {
+    opacity: 0.85;
+    transform: scale(1.05);
 }
