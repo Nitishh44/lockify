@@ -30,7 +30,7 @@ connectDB();
 
 app.use(
   session({
-    secret: 'lockify_secret_key',
+    secret: 'process.env.SESSION_SECRET',
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
@@ -38,6 +38,7 @@ app.use(
     }),
     cookie: {
       maxAge: 1000 * 60 * 30, // half hour
+      secure: process.env.NODE_ENV === "production"
     },
   })
 );
